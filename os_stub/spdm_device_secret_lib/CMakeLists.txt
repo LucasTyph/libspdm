@@ -12,3 +12,7 @@ SET(src_spdm_device_secret_lib
 )
 
 ADD_LIBRARY(spdm_device_secret_lib STATIC ${src_spdm_device_secret_lib})
+
+ADD_LIBRARY(spdm_device_secret_lib_mod STATIC ${src_spdm_device_secret_lib})
+
+target_compile_definitions(spdm_device_secret_lib_mod PRIVATE REMOVE_MEAS_COLLECTION)

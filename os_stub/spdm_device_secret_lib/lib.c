@@ -81,6 +81,9 @@ boolean read_requester_private_certificate(IN uint16 req_base_asym_alg,
 	return res;
 }
 
+#ifndef REMOVE_MEAS_COLLECTION
+// #warning spdm_measurement_collection() removed
+
 /**
   Collect the device measurement.
 
@@ -183,6 +186,8 @@ boolean spdm_measurement_collection(IN uint8 measurement_specification,
 
 	return TRUE;
 }
+
+#endif /* REMOVE_MEAS_COLLECTION */
 
 /**
   Sign an SPDM message data.
@@ -318,9 +323,9 @@ boolean spdm_psk_handshake_secret_hkdf_expand(IN uint32 base_hash_algo,
 	} else {
 		return FALSE;
 	}
-	printf("[PSK]: ");
-	dump_hex_str(psk, psk_size);
-	printf("\n");
+	// printf("[PSK]: ");
+	// dump_hex_str(psk, psk_size);
+	// printf("\n");
 
 	hash_size = spdm_get_hash_size(base_hash_algo);
 

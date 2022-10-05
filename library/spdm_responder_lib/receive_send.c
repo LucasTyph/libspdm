@@ -274,7 +274,7 @@ return_status spdm_build_response(IN void *context, IN uint32 *session_id,
 				  OUT void *response)
 {
 	spdm_context_t *spdm_context;
-	uint8 my_response[MAX_SPDM_MESSAGE_BUFFER_SIZE];
+	static uint8 my_response[MAX_SPDM_MESSAGE_BUFFER_SIZE*1];
 	uintn my_response_size;
 	return_status status;
 	spdm_get_spdm_response_func get_response_func;

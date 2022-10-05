@@ -204,3 +204,4 @@ return_status spdm_get_digest(IN void *context, OUT uint8 *slot_mask,
 
 	return status;
 }
+

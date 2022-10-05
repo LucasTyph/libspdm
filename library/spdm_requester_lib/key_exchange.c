@@ -55,9 +55,9 @@ return_status try_spdm_send_receive_key_exchange(
 {
 	boolean result;
 	return_status status;
-	spdm_key_exchange_request_mine_t spdm_request;
+	static spdm_key_exchange_request_mine_t spdm_request;
 	uintn spdm_request_size;
-	spdm_key_exchange_response_max_t spdm_response;
+	static spdm_key_exchange_response_max_t spdm_response;
 	uintn spdm_response_size;
 	uintn dhe_key_size;
 	uint32 measurement_summary_hash_size;

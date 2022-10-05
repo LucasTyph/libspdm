@@ -46,9 +46,9 @@ return_status try_spdm_get_certificate(IN void *context, IN uint8 slot_id,
 	boolean result;
 	return_status status;
 	spdm_get_certificate_request_t spdm_request;
-	spdm_certificate_response_max_t spdm_response;
+	static spdm_certificate_response_max_t spdm_response;
 	uintn spdm_response_size;
-	large_managed_buffer_t certificate_chain_buffer;
+	static large_managed_buffer_t certificate_chain_buffer;
 	spdm_context_t *spdm_context;
 
 	spdm_context = context;

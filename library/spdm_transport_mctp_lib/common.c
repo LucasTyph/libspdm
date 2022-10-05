@@ -113,10 +113,10 @@ return_status spdm_transport_mctp_encode_message(
 {
 	return_status status;
 	transport_encode_message_func transport_encode_message;
-	uint8 app_message_buffer[MAX_SPDM_MESSAGE_BUFFER_SIZE];
+	static uint8 app_message_buffer[MAX_SPDM_MESSAGE_BUFFER_SIZE];
 	void *app_message;
 	uintn app_message_size;
-	uint8 secured_message[MAX_SPDM_MESSAGE_BUFFER_SIZE];
+	static uint8 secured_message[MAX_SPDM_MESSAGE_BUFFER_SIZE];
 	uintn secured_message_size;
 	spdm_secured_message_callbacks_t spdm_secured_message_callbacks_t;
 	void *secured_message_context;
@@ -230,9 +230,9 @@ return_status spdm_transport_mctp_decode_message(
 	return_status status;
 	transport_decode_message_func transport_decode_message;
 	uint32 *SecuredMessageSessionId;
-	uint8 secured_message[MAX_SPDM_MESSAGE_BUFFER_SIZE];
+	static uint8 secured_message[MAX_SPDM_MESSAGE_BUFFER_SIZE];
 	uintn secured_message_size;
-	uint8 app_message[MAX_SPDM_MESSAGE_BUFFER_SIZE];
+	static uint8 app_message[MAX_SPDM_MESSAGE_BUFFER_SIZE];
 	uintn app_message_size;
 	spdm_secured_message_callbacks_t spdm_secured_message_callbacks_t;
 	void *secured_message_context;

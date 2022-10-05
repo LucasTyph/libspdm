@@ -68,7 +68,7 @@
  *
  * Comment to disable the use of assembly code.
  */
-#define MBEDTLS_HAVE_ASM
+// #define MBEDTLS_HAVE_ASM
 
 /**
  * \def MBEDTLS_NO_UDBL_DIVISION
@@ -96,7 +96,7 @@
  * example, if double-width division is implemented in software, disabling
  * it can reduce code size in some embedded targets.
  */
-//#define MBEDTLS_NO_UDBL_DIVISION
+#define MBEDTLS_NO_UDBL_DIVISION
 
 /**
  * \def MBEDTLS_NO_64BIT_MULTIPLICATION
@@ -142,7 +142,7 @@
  *
  * Comment if your system does not support time functions
  */
-#define MBEDTLS_HAVE_TIME
+// #define MBEDTLS_HAVE_TIME
 
 /**
  * \def MBEDTLS_HAVE_TIME_DATE
@@ -163,7 +163,7 @@
  * mbedtls_platform_gmtime_r() at compile-time by using the macro
  * MBEDTLS_PLATFORM_GMTIME_R_ALT.
  */
-#define MBEDTLS_HAVE_TIME_DATE
+// #define MBEDTLS_HAVE_TIME_DATE
 
 /**
  * \def MBEDTLS_PLATFORM_MEMORY
@@ -1170,7 +1170,7 @@
  *
  * Uncomment this macro to disable the built-in platform entropy functions.
  */
-//#define MBEDTLS_NO_PLATFORM_ENTROPY
+#define MBEDTLS_NO_PLATFORM_ENTROPY
 
 /**
  * \def MBEDTLS_ENTROPY_FORCE_SHA256
@@ -1288,7 +1288,7 @@
  *
  * Enable the checkup functions (*_self_test).
  */
-#define MBEDTLS_SELF_TEST
+// #define MBEDTLS_SELF_TEST
 
 /**
  * \def MBEDTLS_SHA256_SMALLER
@@ -1812,7 +1812,7 @@
  *
  * This modules adds support for the AES-NI instructions on x86-64
  */
-#define MBEDTLS_AESNI_C
+// #define MBEDTLS_AESNI_C
 
 /**
  * \def MBEDTLS_AES_C
@@ -2370,7 +2370,7 @@
  *
  * Uncomment to enable the HAVEGE random generator.
  */
-//#define MBEDTLS_HAVEGE_C
+// #define MBEDTLS_HAVEGE_C
 
 /**
  * \def MBEDTLS_HKDF_C
@@ -2552,7 +2552,7 @@
  *
  * This modules adds support for the VIA PadLock on x86.
  */
-#define MBEDTLS_PADLOCK_C
+// #define MBEDTLS_PADLOCK_C
 
 /**
  * \def MBEDTLS_PEM_PARSE_C
@@ -2912,7 +2912,7 @@
  *
  * This module is used by the HAVEGE random number generator.
  */
-#define MBEDTLS_TIMING_C
+// #define MBEDTLS_TIMING_C
 
 /**
  * \def MBEDTLS_VERSION_C

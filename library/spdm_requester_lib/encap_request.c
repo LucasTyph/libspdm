@@ -141,13 +141,13 @@ return_status spdm_encapsulated_request(IN spdm_context_t *spdm_context,
 					OUT uint8 *req_slot_id_param)
 {
 	return_status status;
-	uint8 request[MAX_SPDM_MESSAGE_BUFFER_SIZE];
+	static uint8 request[MAX_SPDM_MESSAGE_BUFFER_SIZE];
 	uintn spdm_request_size;
 	spdm_get_encapsulated_request_request_t
 		*spdm_get_encapsulated_request_request;
 	spdm_deliver_encapsulated_response_request_t
 		*spdm_deliver_encapsulated_response_request;
-	uint8 response[MAX_SPDM_MESSAGE_BUFFER_SIZE];
+	static uint8 response[MAX_SPDM_MESSAGE_BUFFER_SIZE];
 	uintn spdm_response_size;
 	spdm_encapsulated_request_response_t *spdm_encapsulated_request_response;
 	spdm_encapsulated_response_ack_response_t

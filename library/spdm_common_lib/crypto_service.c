@@ -162,7 +162,7 @@ boolean spdm_calculate_m1m2(IN void *context, IN boolean is_mut,
 	return_status status;
 	uint32 hash_size;
 	uint8 hash_data[MAX_HASH_SIZE];
-	large_managed_buffer_t m1m2;
+	static large_managed_buffer_t m1m2;
 
 	spdm_context = context;
 
@@ -469,7 +469,7 @@ boolean spdm_generate_challenge_auth_signature(IN spdm_context_t *spdm_context,
 {
 	boolean result;
 	uintn signature_size;
-	uint8 m1m2_buffer[MAX_SPDM_MESSAGE_BUFFER_SIZE];
+	static uint8 m1m2_buffer[MAX_SPDM_MESSAGE_BUFFER_SIZE];
 	uintn m1m2_buffer_size;
 
 	m1m2_buffer_size = sizeof(m1m2_buffer);
@@ -573,7 +573,7 @@ boolean spdm_verify_challenge_auth_signature(IN spdm_context_t *spdm_context,
 	void *context;
 	uint8 *cert_chain_data;
 	uintn cert_chain_data_size;
-	uint8 m1m2_buffer[MAX_SPDM_MESSAGE_BUFFER_SIZE];
+	static uint8 m1m2_buffer[MAX_SPDM_MESSAGE_BUFFER_SIZE];
 	uintn m1m2_buffer_size;
 
 	m1m2_buffer_size = sizeof(m1m2_buffer);
@@ -698,12 +698,12 @@ spdm_generate_measurement_summary_hash(IN spdm_context_t *spdm_context,
 				       IN uint8 measurement_summary_hash_type,
 				       OUT uint8 *measurement_summary_hash)
 {
-	uint8 measurement_data[MAX_SPDM_MEASUREMENT_RECORD_SIZE];
+	static uint8 measurement_data[MAX_SPDM_MEASUREMENT_RECORD_SIZE];
 	uintn index;
 	spdm_measurement_block_dmtf_t *cached_measurment_block;
 	uintn measurment_data_size;
 	uintn measurment_block_size;
-	uint8 device_measurement[MAX_SPDM_MEASUREMENT_RECORD_SIZE];
+	static uint8 device_measurement[MAX_SPDM_MEASUREMENT_RECORD_SIZE];
 	uint8 device_measurement_count;
 	uintn device_measurement_size;
 	boolean ret;
@@ -827,7 +827,7 @@ boolean spdm_generate_measurement_signature(IN spdm_context_t *spdm_context,
 {
 	uintn signature_size;
 	boolean result;
-	uint8 l1l2_buffer[MAX_SPDM_MESSAGE_BUFFER_SIZE];
+	static uint8 l1l2_buffer[MAX_SPDM_MESSAGE_BUFFER_SIZE];
 	uintn l1l2_buffer_size;
 
 	l1l2_buffer_size = sizeof(l1l2_buffer);
@@ -866,7 +866,7 @@ boolean spdm_verify_measurement_signature(IN spdm_context_t *spdm_context,
 	void *context;
 	uint8 *cert_chain_data;
 	uintn cert_chain_data_size;
-	uint8 l1l2_buffer[MAX_SPDM_MESSAGE_BUFFER_SIZE];
+	static uint8 l1l2_buffer[MAX_SPDM_MESSAGE_BUFFER_SIZE];
 	uintn l1l2_buffer_size;
 
 	l1l2_buffer_size = sizeof(l1l2_buffer);

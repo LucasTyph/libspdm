@@ -45,7 +45,7 @@ return_status try_spdm_challenge(IN void *context, IN uint8 slot_id,
 	return_status status;
 	boolean result;
 	spdm_challenge_request_t spdm_request;
-	spdm_challenge_auth_response_max_t spdm_response;
+	static spdm_challenge_auth_response_max_t spdm_response;
 	uintn spdm_response_size;
 	uint8 *ptr;
 	void *cert_chain_hash;

@@ -318,7 +318,7 @@ return_status spdm_decode_secured_message(
 	spdm_session_type_t session_type;
 	spdm_session_state_t session_state;
 	spdm_error_struct_t spdm_error;
-	uint8 dec_message[MAX_SPDM_MESSAGE_BUFFER_SIZE];
+	static uint8 dec_message[MAX_SPDM_MESSAGE_BUFFER_SIZE];
 
 	spdm_error.error_code = 0;
 	spdm_error.session_id = 0;
