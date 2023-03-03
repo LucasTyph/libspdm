@@ -14,6 +14,7 @@
   of size reduction when compiler optimization is disabled. If MDEPKG_NDEBUG is
   defined, then debug and assert related macros wrapped by it are the NULL implementations.
 **/
+#define MDEPKG_NDEBUG
 
 #ifndef __DEBUG_LIB_H__
 #define __DEBUG_LIB_H__
